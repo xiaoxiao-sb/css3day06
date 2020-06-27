@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 48px;
+            height: 48px;
+            background-image: url("img/animation.png");
+            background-repeat: no-repeat;
+            animation: rabbit 0.5s steps(12) infinite;
+        }
+        @keyframes rabbit {
+            from{background-position: 0px 0px}
+            to{background-position: -576px 0px}
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script type="text/javascript">
+</script>
+</html>

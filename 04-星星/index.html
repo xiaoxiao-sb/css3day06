@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box1,#box2{
+            width: 100px;
+            height: 100px;
+            margin:150px auto;
+            background-repeat: no-repeat;
+        }
+        #box1{
+            background-image: url("img/star-sprite.png");
+        }
+        #box2{
+            background-image: url("img/heart-sprite.png");
+        }
+        #box1:hover,#box2:hover{
+            /*划过的时候执行一个动画*/
+            animation: star 0.5s steps(29) infinite;
+        }
+        @keyframes star {
+            from{background-position: 0px 0px;}
+            to{background-position: -2900px 0px;}
+        }
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+<div id="box2"></div>
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        var box = document.getElementById('box');
+
+
+    }
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background: deeppink;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        var box = document.getElementById('box');
+        var obj = {
+            name:'Tom',
+            age:18,
+            height:180
+        }
+//        for...in循环    遍历对象上属性名，枚举对象上属性
+//        for...in循环在遍历对象是  i代表对应的属性名称  得到的值得类型是字符串
+        for(var i in obj){
+//            i 对应属性名
+//            console.log()
+//            console.log(typeof i)
+            console.log(obj[i])
+        }
+//     读取对象上的属性
+//        console.log(obj.name);
+//        通过对象名[]来获取属性时  要传递字符串
+//        console.log(obj['name']);
+//        赋值操作
+//        obj.age = 19;
+//        obj['age'] = 20;
+//        console.log(obj.age)
+    }
+</script>
+</html>

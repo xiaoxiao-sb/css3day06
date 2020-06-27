@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            position: absolute;
+            top:200px;
+            left: 200px;
+            width: 10px;
+            height: 10px;
+            background: yellowgreen;
+        }
+        .test{
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        var box = document.getElementById('box');
+//        获取当前位置
+        var boxLeft = box.offsetLeft;
+        var boxTop = box.offsetTop;
+        var deg = 0;
+//        定义放大比例
+        var scale = 100;
+//        启动定时器
+        setInterval(function () {
+            deg++;
+//        设置新的位置
+            box.style.left = boxLeft+deg*Math.PI/180*scale*0.5+'px';
+            box.style.top = boxTop+Math.sin(deg*Math.PI/180)*scale*2+'px';
+
+            var div = document.createElement('div');
+            div.className = 'test';
+            div.style.left = box.offsetLeft+'px';
+            div.style.top = box.offsetTop+'px';
+            document.body.appendChild(div)
+        },20)
+    }
+</script>
+</html>

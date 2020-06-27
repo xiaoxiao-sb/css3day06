@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background: deeppink;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <img src="img/bg/1400000.png" alt="" id="imgNode">
+</div>
+</body>
+<script type="text/javascript">
+    var imgNode = document.getElementById('imgNode');
+    console.log('外部='+imgNode.width);//0
+//    保证所有资源加载完成（img，js,css,font,包）
+    window.onload = function () {
+        console.log('内部='+imgNode.width)//
+    }
+//    保证当前图片加载完成
+    imgNode.onload = function () {
+        console.log('img='+imgNode.width)//
+    }
+//    图片资源加载失败
+    imgNode.onerror = function () {
+      console.log('哎呀，图片丢啦')
+    }
+
+</script>
+</html>
